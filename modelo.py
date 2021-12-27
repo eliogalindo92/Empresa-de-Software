@@ -6,10 +6,10 @@ class Software:
         self.__id = id
         self.__lineasCod = lineasCod
         self.__horasTrab = horasTrab
-        
-    
+          
+#Método abstracto que devuelve el cobro.
     def cobro(self):
-        return 0.5*self.__horasTrab
+        return 0.5*self.__lineasCod*self.__horasTrab
 
 #Clase hija Software Extranjero
 class SoftwareExtranjero(Software):
@@ -69,7 +69,7 @@ class SoftwareExtranjero(Software):
 #Clase hija Software Nacional
 class SoftwareNacional(Software):
 
-    #Método inicializador o constructor donde se crean las instancias atributos de la clase
+#Método inicializador o constructor donde se crean las instancias atributos de la clase
     def __init__(self, id, lineasCod, horasTrab, organismo):
         super().__init__(id, lineasCod, horasTrab)
         self.__organismo = organismo
