@@ -27,7 +27,7 @@ class Empresa:
         for software in self.__listaSoftware:
             if isinstance(software, SoftwareExtranjero):
                 cobroSoftExt = software.cobro()
-            if isinstance(Software, SoftwareNacional):
+            if isinstance(software, SoftwareNacional):
                 cobroSoftNac = software.cobro()
         cobroTotal = cobroSoftExt + cobroSoftNac
         return cobroTotal
