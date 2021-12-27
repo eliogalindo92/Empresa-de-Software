@@ -16,8 +16,8 @@ class Empresa:
         self.listaSoftware = listaSoftware
 
 #Método para añadir softwares a la lista
-    def añadirSoftware(self, sofware):
-        self.__listaSoftware.append(sofware)
+    def añadirSoftware(self, software):
+        self.__listaSoftware.append(software)
 
 #Método para calcular el cobro total de todos los sofwares contratados.
     def cobroTotal(self):
@@ -36,13 +36,13 @@ class Empresa:
 #Método para calcular el cobro dado el id del software.
     def cobroID(self, id):
         cobro = 0
-        for sofware in self.__listaSoftware:
-            if isinstance(sofware, SoftwareExtranjero):
-                if sofware.id == id:
-                    cobro = sofware.cobro()
-            if isinstance(sofware, SoftwareNacional):
-                if sofware.id == id:
-                    cobro = sofware.cobro()
+        for software in self.__listaSoftware:
+            if isinstance(software, SoftwareExtranjero):
+                if software.id == id:
+                   cobro = software.cobro()
+            if isinstance(software, SoftwareNacional):
+                if software.id == id:
+                   cobro = software.cobro()
         return cobro
 
 #Método para contar la cantidad de contratos por un organismo nacional.
@@ -50,7 +50,7 @@ class Empresa:
         total = 0
         for software in self.__listaSoftware:
             if isinstance(software, SoftwareNacional):
-                if software.__organismo == organismo:
+                if software.organismo == organismo:
                     total+=1
         return total
 

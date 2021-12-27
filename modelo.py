@@ -17,6 +17,9 @@ class SoftwareExtranjero(Software):
 #Método inicializador o constructor donde se crean las instancias atributos de la clase
     def __init__(self, id, lineasCod, horasTrab, empExt, impuesto):
         super().__init__(id, lineasCod, horasTrab)
+        self.__id = id
+        self.__lineasCod = lineasCod
+        self.__horasTrab = horasTrab
         self.__empExt = empExt
         self.__impuesto = impuesto
 
@@ -72,6 +75,9 @@ class SoftwareNacional(Software):
 #Método inicializador o constructor donde se crean las instancias atributos de la clase
     def __init__(self, id, lineasCod, horasTrab, organismo):
         super().__init__(id, lineasCod, horasTrab)
+        self.__id = id
+        self.__lineasCod = lineasCod
+        self.__horasTrab = horasTrab
         self.__organismo = organismo
     
 #Métodos getter y setters (pythonicos) para añadir u obtener valores de los atributos de cada clase.
