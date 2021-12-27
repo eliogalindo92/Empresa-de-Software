@@ -66,6 +66,11 @@ class GUI():
         self.label = Label()
         self.label.config(text = selection)        
         self.label.pack()
+
+    ## boton de prueba guardar entrada
+    def getTextEntrada(self):
+        self.result=self.campoTexto.get()
+        print(self.result)
         
     def _unidadGrafica(self):
         ## iniciando menu
@@ -88,6 +93,13 @@ class GUI():
 
         R3 = Radiobutton(self.root, text="Opcion 3", variable=self.var, value=3, command=self.sel)
         R3.pack( anchor = W)
+
+        ## entrada de texto
+        self.campoTexto=tk.Entry(self.root)
+        self.campoTexto.pack()
+
+        btnRead=tk.Button(self.root, height=1, width=10, text="Read", command= self.getTextEntrada)
+        btnRead.pack()
 
 
 main_UI = GUI()
