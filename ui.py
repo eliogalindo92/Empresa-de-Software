@@ -62,7 +62,7 @@ class GUI():
 
     ## esto es para controlar los radiobutton
     def sel(self):
-        selection = "A seleccionado la " + str(self.var.get())
+        selection = "A seleccionado la opcion " + str(self.var.get())
         self.label = Label()
         self.label.config(text = selection)        
         self.label.pack()
