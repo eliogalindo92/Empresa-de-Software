@@ -68,8 +68,18 @@ class GUI():
         self.label.pack()
 
     ## boton de prueba guardar entrada
-    def getTextEntrada(self):
-        self.result=self.campoTexto.get()
+    def guardarE(self):
+        self.result=(self.campoTextoID.get(), self.campoTextoLineas.get(), self.campoTextoHoras.get())
+        print(self.result)
+
+    ## boton de prueba editar entrada
+    def editarE(self):
+        self.result=(self.campoTextoID.get(), self.campoTextoLineas.get(), self.campoTextoHoras.get())
+        print(self.result)
+
+    ## boton de prueba eliminar entrada
+    def eliminarE(self):
+        self.result=(self.campoTextoID.get(), self.campoTextoLineas.get(), self.campoTextoHoras.get())
         print(self.result)
         
     def _unidadGrafica(self):
@@ -95,19 +105,31 @@ class GUI():
         R3.pack( anchor = W)
 
         ## entrada de texto
-        self.campoTexto=tk.Entry(self.root)
-        self.campoTexto.pack()
+        self.lab1 = Label(self.root, text="ID")
+        self.lab1.pack()
 
-        btnRead=tk.Button(self.root, height=1, width=10, text="Read", command= self.getTextEntrada)
+        self.campoTextoID=tk.Entry(self.root)
+        self.campoTextoID.pack()
+
+        self.lab1 = Label(self.root, text="lineas de codigo")
+        self.lab1.pack()
+
+        self.campoTextoLineas=tk.Entry(self.root)
+        self.campoTextoLineas.pack()
+
+        self.lab1 = Label(self.root, text="Horas trabajadas")
+        self.lab1.pack()
+
+        self.campoTextoHoras=tk.Entry(self.root)
+        self.campoTextoHoras.pack()
+
+        btnRead=tk.Button(self.root, height=1, width=10, text="guardar", command= self.guardarE)
         btnRead.pack()
 
+        btnRead=tk.Button(self.root, height=1, width=10, text="editar", command= self.editarE)
+        btnRead.pack()
+
+        btnRead=tk.Button(self.root, height=1, width=10, text="eliminar", command= self.eliminarE)
+        btnRead.pack()
 
 main_UI = GUI()
-
-softext = SoftwareExtranjero(1, 10, 50, 'MaxtSOFT', 100)
-cobro = softext.cobro()
-print(cobro)
-
-sn = SoftwareNacional(1, 10, 50, 'Desoft')
-cobro = sn.cobro()
-print(cobro)

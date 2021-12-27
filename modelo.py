@@ -111,5 +111,3 @@ class SoftwareNacional(Software):
 #Método para calcular el cobro del software nacional.
     def cobro(self):
         return super().cobro()
-
-
