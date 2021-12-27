@@ -105,11 +105,20 @@ class GUI():
         R3.pack( anchor = W)
 
         ## entrada de texto
+        self.lab1 = Label(self.root, text="ID")
+        self.lab1.pack()
+
         self.campoTextoID=tk.Entry(self.root)
         self.campoTextoID.pack()
 
+        self.lab1 = Label(self.root, text="lineas de codigo")
+        self.lab1.pack()
+
         self.campoTextoLineas=tk.Entry(self.root)
         self.campoTextoLineas.pack()
+
+        self.lab1 = Label(self.root, text="Horas trabajadas")
+        self.lab1.pack()
 
         self.campoTextoHoras=tk.Entry(self.root)
         self.campoTextoHoras.pack()
