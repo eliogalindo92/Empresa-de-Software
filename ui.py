@@ -60,6 +60,13 @@ class GUI():
             self.reloj.after(500,relojj)
         relojj()
 
+    ## esto es para controlar los radiobutton
+    def sel(self):
+        selection = "A seleccionado la " + str(self.var.get())
+        self.label = Label()
+        self.label.config(text = selection)        
+        self.label.pack()
+        
     def _unidadGrafica(self):
         ## iniciando menu
         self.menuBarr()
@@ -68,6 +75,19 @@ class GUI():
         self.lab1 = Label(self.root, text="Esto es un Label")
         self.lab1.pack()
 
+        ## Reloj
         self.reloj_label()
+
+        ## Radiobuttom
+        self.var = IntVar()
+        R1 = Radiobutton(self.root, text="Opcion 1", variable=self.var, value=1, command=self.sel)
+        R1.pack( anchor = W )
+
+        R2 = Radiobutton(self.root, text="Opcion 2", variable=self.var, value=2, command=self.sel)
+        R2.pack( anchor = W )
+
+        R3 = Radiobutton(self.root, text="Opcion 3", variable=self.var, value=3, command=self.sel)
+        R3.pack( anchor = W)
+
 
 main_UI = GUI()
