@@ -103,3 +103,11 @@ class GUI():
 
 
 main_UI = GUI()
+
+softext = SoftwareExtranjero(1, 10, 50, 'MaxtSOFT', 100)
+cobro = softext.cobro()
+print(cobro)
+
+sn = SoftwareNacional(1, 10, 50, 'Desoft')
+cobro = sn.cobro()
+print(cobro)
