@@ -1,5 +1,5 @@
 from modelo import*
-
+import pickle
 class Empresa:
 
 #lista polimórfica de todos los softwares contratados.
@@ -18,6 +18,7 @@ class Empresa:
 #Método para añadir softwares a la lista
     def añadirSoftware(self, software):
         self.__listaSoftware.append(software)
+        self.guardarFichero()
 
 #Método para calcular el cobro total de todos los softwares contratados.
     def cobroTotal(self):
@@ -55,3 +56,19 @@ class Empresa:
         return total
 
             
+#Método para crear un fichero con la lista de softwares
+    def guardarFichero(self):
+        fichero = open("listaSoftware.dat", "wb")
+        pickle.dump(self.listaSoftware, fichero)
+        fichero.close()
+
+#Método para cargar datos del fichero
+    def leerFichero(self):
+        try:
+            fichero = open("listaSoftware.dat", "rb")
+            self.__listaSoftware = pickle.load(fichero)
+        except:
+            FileNotFoundError
+
+
+
