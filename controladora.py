@@ -19,7 +19,7 @@ class Empresa:
     def añadirSoftware(self, software):
         self.__listaSoftware.append(software)
 
-#Método para calcular el cobro total de todos los sofwares contratados.
+#Método para calcular el cobro total de todos los softwares contratados.
     def cobroTotal(self):
         cobroTotal = 0
         cobroSoftExt = 0

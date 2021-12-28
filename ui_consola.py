@@ -14,8 +14,8 @@ for i in range(3):
         horasTrab = float(input("Teclee las horas trabajadas en el software: "))
         empExt = str(input("Teclee el nombre de la empresa extranjera: "))
         impuesto = float(input("Teclee el impuesto a cobrar: ")) 
-        Software = SoftwareExtranjero(id, lineasCod, horasTrab, empExt, impuesto)
-        empresa.añadirSoftware(Software)
+        nuevoSoftware = SoftwareExtranjero(id, lineasCod, horasTrab, empExt, impuesto)
+        empresa.añadirSoftware(nuevoSoftware)
         print(f"Cantidad de softwares en la lista: {len(empresa.listaSoftware)}")
     
     elif valor == 2:
@@ -23,8 +23,8 @@ for i in range(3):
         lineasCod = int(input("Teclee la cantidad de líneas de código del software: "))
         horasTrab = float(input("Teclee las horas trabajadas en el software: "))
         organismo = str(input("Teclee el nombre del organismo: "))
-        Software = SoftwareNacional(id, lineasCod, horasTrab, organismo)
-        empresa.añadirSoftware(Software)
+        nuevoSoftware = SoftwareNacional(id, lineasCod, horasTrab, organismo)
+        empresa.añadirSoftware(nuevoSoftware)
         print(f"Cantidad de softwares en la lista: {len(empresa.listaSoftware)}")
 
     else:
