@@ -1,5 +1,6 @@
 from modelo import*
 import pickle
+
 class Empresa:
 
 #lista polimórfica de todos los softwares contratados.
