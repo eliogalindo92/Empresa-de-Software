@@ -1,40 +1,77 @@
 from modelo import*
 from controladora import Empresa
-
-#Instancia de la clase Empresa(Controladora)
 empresa = Empresa()
+def agregarSoftware():
+    continuar = "si"
+    while True:
+        if continuar == "no":
+           break
+        else: 
+            print("Seleccione el tipo de software a añadir a la lista:\n 1. Software extranjero\n 2. Software nacional")
+            valor = int(input("Teclee la opción deseada aquí: "))
 
-for i in range(3):
-    print("Seleccione el software a añadir a la lista:\n 1. Software extranjero\n 2. Software nacional")
-    valor = int(input("Teclee la opción deseada: "))
-
-    if valor == 1:
-        id = str(input("Teclee el id del software: "))
-        lineasCod = int(input("Teclee la cantidad de líneas de código del software: "))
-        horasTrab = float(input("Teclee las horas trabajadas en el software: "))
-        empExt = str(input("Teclee el nombre de la empresa extranjera: "))
-        impuesto = float(input("Teclee el impuesto a cobrar: ")) 
-        nuevoSoftware = SoftwareExtranjero(id, lineasCod, horasTrab, empExt, impuesto)
-        empresa.añadirSoftware(nuevoSoftware)
-        print(f"Cantidad de softwares en la lista: {len(empresa.listaSoftware)}")
+            if valor == 1:
+                   id = str(input("Teclee el id del software: "))
+                   lineasCod = int(input("Teclee la cantidad de líneas de código del software: "))
+                   horasTrab = float(input("Teclee las horas trabajadas en el software: "))
+                   empExt = str(input("Teclee el nombre de la empresa extranjera: "))
+                   impuesto = float(input("Teclee el impuesto a cobrar: ")) 
+                   nuevoSoftware = SoftwareExtranjero(id, lineasCod, horasTrab, empExt, impuesto)
+                   empresa.añadirSoftware(nuevoSoftware)
+                   print(f"Cantidad de softwares en la lista: {len(empresa.listaSoftware)}")
+                   continuar = str(input("¿Desea agregar un nuevo software? (si/no): "))
+                   if continuar != "si" or continuar != "no":
+                      break
     
-    elif valor == 2:
-        id = str(input("Teclee el id del software: "))
-        lineasCod = int(input("Teclee la cantidad de líneas de código del software: "))
-        horasTrab = float(input("Teclee las horas trabajadas en el software: "))
-        organismo = str(input("Teclee el nombre del organismo: "))
-        nuevoSoftware = SoftwareNacional(id, lineasCod, horasTrab, organismo)
-        empresa.añadirSoftware(nuevoSoftware)
-        print(f"Cantidad de softwares en la lista: {len(empresa.listaSoftware)}")
+    
+            elif valor == 2:
+                    id = str(input("Teclee el id del software: "))
+                    lineasCod = int(input("Teclee la cantidad de líneas de código del software: "))
+                    horasTrab = float(input("Teclee las horas trabajadas en el software: "))
+                    organismo = str(input("Teclee el nombre del organismo: "))
+                    nuevoSoftware = SoftwareNacional(id, lineasCod, horasTrab, organismo)
+                    empresa.añadirSoftware(nuevoSoftware)
+                    print(f"Cantidad de softwares en la lista: {len(empresa.listaSoftware)}")
+                    continuar = str(input("Desea agregar un nuevo software (si/no): "))
+            else:
+                    print("Seleccione una opción válida")
+    opciones()
 
+def calcularCobro():
+    print(f"El cobro total de todos los softwares es: {empresa.cobroTotal()}")
+    opciones()
+
+def verContratos():
+    continuar = "si"
+    while True:
+        if continuar == "no":
+           break
+        else:
+           organismo = str(input("Teclee el nombre del organismo: "))
+           contratos = empresa.contratosOrganismo(organismo)
+           print(f"El total de contratos de {organismo} es: {contratos}")
+           continuar = str(input("¿Desea verificar los contratos de otro organismo?  (si/no): "))
+    opciones()
+
+
+def opciones():
+    softwares = empresa.listaSoftware.__len__()
+    print(f"Empresa de Software. Total de softwares registrados: {softwares}")
+    print(" 1. Agregar un software a la lista\n 2. Calcular el cobro total de todos los softwares\n 3. Ver contratos de un organismo nacional\n 4. Salir")
+  
+    opcion =  str(input("Teclee la opción seleccionada aquí: "))
+    if opcion == "1":
+        agregarSoftware()
+    elif opcion == "2":
+        calcularCobro()
+    elif opcion == "3":
+         verContratos()
+    elif opcion == "4":
+         quit()
     else:
         print("Seleccione una opción válida")
+        opciones()
 
-
-#Almaceno en cada variable el resultado que me devuelven los métodos creados en la clase Empresa y los imprimo
-cobroTotal = empresa.cobroTotal()
-cobroDadoID = empresa.cobroID('2')
-contratosDadoOrg = empresa.contratosOrganismo('Desoft')
-print(f"El cobro total de todos los softwares contratados es: {cobroTotal}")
-print(f"El cobro total dado el ID del software contratado es: {cobroDadoID}")
-print(f"El total de contratos dado el nombre del organismo nacional es: {contratosDadoOrg}")
+if __name__ == "__main__":
+   empresa.leerFichero()
+   opciones()
