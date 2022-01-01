@@ -21,6 +21,7 @@ class Empresa:
         self.__listaSoftware.append(software)
         self.guardarFichero()
 
+
 #Método para calcular el cobro total de todos los softwares contratados.
     def cobroTotal(self):
         cobroTotal = 0

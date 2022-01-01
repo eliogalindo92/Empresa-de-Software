@@ -62,13 +62,13 @@ def opciones():
     print(" 1. Agregar un software a la lista\n 2. Calcular el cobro total de todos los softwares\n 3. Ver contratos de un organismo nacional\n 4. Salir")
   
     opcion =  str(input("Teclee la opción seleccionada aquí: "))
-    if opcion == "1":
+    if opcion == 1:
         agregarSoftware()
-    elif opcion == "2":
+    elif opcion == 2:
         calcularCobro()
-    elif opcion == "3":
+    elif opcion == 3:
          verContratos()
-    elif opcion == "4":
+    elif opcion == 4:
          quit()
     else:
         print("ERROR: Seleccione una opción válida")
