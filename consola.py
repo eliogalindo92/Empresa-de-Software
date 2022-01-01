@@ -8,9 +8,9 @@ def agregarSoftware():
            break
         else: 
             print("Seleccione el tipo de software a añadir a la lista:\n 1. Software extranjero\n 2. Software nacional\n 3. Cancelar")
-            valor = int(input("Teclee la opción deseada aquí: "))
+            valor = str(input("Teclee la opción deseada aquí: "))
 
-            if valor == 1:
+            if valor == "1":
                    id = str(input("Teclee el id del software: "))
                    lineasCod = int(input("Teclee la cantidad de líneas de código del software: "))
                    horasTrab = float(input("Teclee las horas trabajadas en el software: "))
@@ -21,7 +21,7 @@ def agregarSoftware():
                    print(f"Cantidad de softwares en la lista: {len(empresa.listaSoftware)}")
                    continuar = str(input("¿Desea agregar un nuevo software? (si/no): "))
     
-            elif valor == 2:
+            elif valor == "2":
                     id = str(input("Teclee el id del software: "))
                     lineasCod = int(input("Teclee la cantidad de líneas de código del software: "))
                     horasTrab = float(input("Teclee las horas trabajadas en el software: "))
@@ -31,7 +31,7 @@ def agregarSoftware():
                     print(f"Cantidad de softwares en la lista: {len(empresa.listaSoftware)}")
                     continuar = str(input("Desea agregar un nuevo software (si/no): "))
             
-            elif valor == 3:
+            elif valor == "3":
                     opciones()
 
 
@@ -62,13 +62,13 @@ def opciones():
     print(" 1. Agregar un software a la lista\n 2. Calcular el cobro total de todos los softwares\n 3. Ver contratos de un organismo nacional\n 4. Salir")
   
     opcion =  str(input("Teclee la opción seleccionada aquí: "))
-    if opcion == 1:
+    if opcion == "1":
         agregarSoftware()
-    elif opcion == 2:
+    elif opcion == "2":
         calcularCobro()
-    elif opcion == 3:
+    elif opcion == "3":
          verContratos()
-    elif opcion == 4:
+    elif opcion == "4":
          quit()
     else:
         print("ERROR: Seleccione una opción válida")

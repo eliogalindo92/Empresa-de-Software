@@ -54,7 +54,7 @@ class Empresa:
         for software in self.__listaSoftware:
             if isinstance(software, SoftwareNacional):
                 if software.organismo == organismo:
-                    total+=1
+                    total += 1
         return total
 
             
