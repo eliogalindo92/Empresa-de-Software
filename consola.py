@@ -7,7 +7,7 @@ def agregarSoftware():
         if continuar == "no":
            break
         else: 
-            print("Seleccione el tipo de software a añadir a la lista:\n 1. Software extranjero\n 2. Software nacional\n 3. Salir")
+            print("Seleccione el tipo de software a añadir a la lista:\n 1. Software extranjero\n 2. Software nacional\n 3. Cancelar")
             valor = int(input("Teclee la opción deseada aquí: "))
 
             if valor == 1:
@@ -32,7 +32,8 @@ def agregarSoftware():
                     continuar = str(input("Desea agregar un nuevo software (si/no): "))
             
             elif valor == 3:
-                    quit()
+                    opciones()
+
 
             else:
                     print("ERROR: Seleccione una opción válida")
