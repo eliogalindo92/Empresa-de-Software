@@ -7,7 +7,7 @@ def agregarSoftware():
         if continuar == "no":
            break
         else: 
-            print("Seleccione el tipo de software a añadir a la lista:\n 1. Software extranjero\n 2. Software nacional")
+            print("Seleccione el tipo de software a añadir a la lista:\n 1. Software extranjero\n 2. Software nacional\n 3. Salir")
             valor = int(input("Teclee la opción deseada aquí: "))
 
             if valor == 1:
@@ -20,9 +20,6 @@ def agregarSoftware():
                    empresa.añadirSoftware(nuevoSoftware)
                    print(f"Cantidad de softwares en la lista: {len(empresa.listaSoftware)}")
                    continuar = str(input("¿Desea agregar un nuevo software? (si/no): "))
-                   if continuar != "si" or continuar != "no":
-                      break
-    
     
             elif valor == 2:
                     id = str(input("Teclee el id del software: "))
@@ -33,8 +30,12 @@ def agregarSoftware():
                     empresa.añadirSoftware(nuevoSoftware)
                     print(f"Cantidad de softwares en la lista: {len(empresa.listaSoftware)}")
                     continuar = str(input("Desea agregar un nuevo software (si/no): "))
+            
+            elif valor == 3:
+                    quit()
+
             else:
-                    print("Seleccione una opción válida")
+                    print("ERROR: Seleccione una opción válida")
     opciones()
 
 def calcularCobro():
@@ -69,7 +70,7 @@ def opciones():
     elif opcion == "4":
          quit()
     else:
-        print("Seleccione una opción válida")
+        print("ERROR: Seleccione una opción válida")
         opciones()
 
 if __name__ == "__main__":
